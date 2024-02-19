@@ -26,11 +26,9 @@ xtwone3four
 zoneight
 7pqrstsixteen"""
 
-
 let digitWords =
     [ "one"; "two"; "three"; "four"; "five"; "six"; "seven"; "eight"; "nine" ]
-    |> List.indexed
-    |> List.map (fun (i, word) -> {| Text = word; Value = i + 1 |})
+    |> List.mapi (fun i word -> {| Text = word; Value = i + 1 |})
 
 let getCalibrationNumber2 (line: string) =
     let digits =
